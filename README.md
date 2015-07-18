@@ -1,0 +1,2 @@
+# UzbekCuisine
+Web project
