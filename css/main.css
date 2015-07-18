@@ -1,0 +1,917 @@
+/*************************** SYMBOLS ***************************/
+
+@charset "UTF-8";
+
+ @font-face {
+  font-family: 'symbols-font';
+  src: url('../fonts/icons/symbols-font.eot?22619757');
+  src: url('../fonts/icons/symbols-font.eot?22619757#iefix') format('embedded-opentype'),
+       url('../fonts/icons/symbols-font.woff?22619757') format('woff'),
+       url('../fonts/icons/symbols-font.ttf?22619757') format('truetype'),
+       url('../fonts/icons/symbols-font.svg?22619757#symbols-font') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-radio:0) {
+  @font-face {
+    font-family: 'symbols-font';
+    src: url('../font/symbols-font.svg?22619757#symbols-font') format('svg');
+  }
+}
+*/
+
+ [class^="icon-"]:before, [class*=" icon-"]:before{
+    font-family: "symbols-font";
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+
+    display: inline-block;
+    text-decoration: inherit;
+    width: 1em;
+    margin-right: .2em;
+    text-align: center;
+    /* opacity: .8; */
+
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    text-transform: none;
+
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+
+    /* Animation center compensation - margins should be symmetric */
+    /* remove if not needed */
+    margin-left: .2em;
+
+    /* you can be more comfortable with increased icons size */
+    /* font-size: 120%; */
+
+    /* Uncomment for 3D effect */
+    /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-facebook:before { content: '\66'; } /* 'f' */
+.icon-twitter:before { content: '\74'; } /* 't' */
+.icon-vk:before { content: '\76'; } /* 'v' */
+
+
+/*************************** RESPONSIVE GRIG SYSTEM ***************************/
+
+/*  SECTIONS  */
+.section {
+    clear: both;
+    padding: 0px;
+    margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+    display: block;
+    float:left;
+    margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+
+
+/*  GROUPING  */
+.group:before,
+.group:after {
+    content:"";
+    display:table;
+}
+.group:after {
+    clear:both;
+}
+.group {
+    zoom:1; /* For IE 6/7 */
+}
+
+/*  GRID OF TWELVE  */
+.span_12_of_12 {
+    width: 100%;
+}
+
+.span_11_of_12 {
+    width: 91.53%;
+}
+
+.span_10_of_12 {
+    width: 83.06%;
+}
+
+.span_9_of_12 {
+    width: 74.6%;
+}
+
+.span_8_of_12 {
+    width: 66.13%;
+}
+
+.span_7_of_12 {
+    width: 57.66%; 
+}
+
+.span_6_of_12 {
+    width: 49.2%; 
+}
+
+.span_5_of_12 {
+    width: 40.73%; 
+}
+
+.span_4_of_12 {
+    width: 32.26%; 
+}
+
+.span_3_of_12 {
+    width: 23.8%;
+}
+
+.span_2_of_12 {
+    width: 15.33%; 
+}
+
+.span_1_of_12 {
+    width: 6.86%; 
+}
+
+/*************************************** OTHER GRID RULES ***************************************/
+
+.container{
+    margin: 0 auto;
+    padding: 0px 3.2%;
+
+    max-width: 1250px;
+}
+
+.row:before,
+.row:after,
+.container:before,
+.container:after,
+.clearfix:before,
+.clearfix:after{
+    display: table;
+    clear: both;
+    content: '';
+}
+
+/*************************************** PAGE ***************************************/
+
+/******************************** GLOBAL RULES ********************************/
+
+body{
+    font-family: 'EB Garamond', serif;
+    font-size: 1em;
+}
+
+h1, h2, h3{
+    position: relative;
+    margin:0;
+    padding: 0;
+    font-family: 'Yeseva One', cursive;
+    letter-spacing: 2px;
+}
+
+h1{
+    text-shadow: 0px 0px 0px rgba(0,0,0,0.7);
+}
+
+h2{
+    font-size: 2.25em;
+    margin-bottom: 64px;
+}
+
+h1:after, h2:after, h3:after{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    display: block;
+    background-image: url("../images/decor/hX_after.png");
+    background-repeat: no-repeat; 
+}
+
+h1:after{
+    min-height: 80px;
+    background-position: center 23px;
+}
+
+h2:after{
+    min-height: 60px;
+    background-position: center 15px;
+    background-image: url("../images/decor/hX_after_orange.png");
+}
+
+h3:after{
+    min-height: 50px;
+    background-position: center 15px;
+    background-image: url("../images/decor/small_hX_after_white.png");
+}
+
+
+/******************************** LOCAL RULES ********************************/
+
+.page-header{
+    width: 100%;
+    overflow: hidden;
+}
+
+.cover{
+    position: relative;
+    background: black url("../images/bgs/image-bg.png") repeat center 0 fixed;
+    padding-bottom: 143px;
+}
+
+    .logo-menu{
+        min-height: 100px;
+        margin-bottom: 110px;
+    }
+
+        .logo{
+            float: left;
+            max-width: 220px;
+            height: 100px;
+            overflow: hidden;
+            text-align: center;
+            /* Позиционирование лого */
+            margin-left: 5px;
+            margin-top: 8px;
+        }
+
+        .header-social{
+            position: relative;
+            float: right;
+            margin-left: 20px;
+        }
+
+            .social-icons{
+                margin: 0;
+                padding: 0;
+            }
+
+            .social-icons li{
+                position: relative;
+                display: inline-block;
+                list-style: none;
+                padding: 50px 5px;
+                line-height: 100px;
+                font-size: 1.3125em;
+            }
+
+            .social-icons li a{
+                text-decoration: none;
+                color: white;
+                transition: 0.3s;
+            }
+
+            .social-icons li a:hover{
+                color: #cfd0e5;
+            }
+
+        .header-menu{
+            float: right;
+            font-family: 'Kurale', serif;
+        }
+
+            .header-nav{
+                margin: 0;
+                padding: 0;
+            }
+
+            .header-nav li{
+                display: inline-block;
+                padding: 10px 20px;
+                line-height: 100px;
+                list-style: none;
+                font-size: 1.3125em;
+            }
+
+            .header-nav li a{
+                text-decoration: none;
+                color: white;
+            }
+
+            .header-nav li a:hover{
+                text-decoration: underline;
+            }
+
+    .callout-text{
+        position: relative;
+        line-height: 1.525em;
+        text-align: center;
+        font-family: 'Yeseva One', cursive;
+        font-size: 6em;
+        color: green;
+        text-shadow: white 1px 1px 0, white -1px -1px 0, 
+                     white -1px 1px 0, white 1px -1px 0;
+        margin-bottom: 99px;
+        color: green;
+    }
+
+    .header-buttons{
+        text-align: center;
+    }
+
+    .header-buttons a{
+        display: inline-block;
+        margin-left: 25px;
+        width: 226px;
+        min-height: 54px;
+        text-transform: uppercase;
+        border: 1px solid white;
+        line-height: 54px;
+        font-size: 1.125em;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .header-buttons a:first-child{
+        margin-left: 0px;
+    }
+
+    .header-buttons .dark{
+        position: relative;
+        background-color: rgba(0,0,0,0.7);
+        color: white;
+        border: 1px solid black;
+    }
+
+    .header-buttons .dark:hover{
+        background-color: rgba(0,0,0,0.8);
+    }
+
+    .header-buttons .light{
+        background-color: rgba(255,255,255,0.5);
+        color: black;
+        border: 1px solid white;
+    }
+
+    .header-buttons .light:hover{
+        background-color: rgba(255,255,255,0.8);
+    }
+
+.header-phone{
+        text-align: center;
+        padding-top: 10px;
+        text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
+
+        position: absolute;
+        left: 0; right: 0;
+}
+
+.header-phone a{
+    color: white;
+    letter-spacing: 1px;
+    font-family: 'Kurale', serif;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.page-content{
+    position: relative;
+    width: 100%;
+}
+
+.about{
+    position: relative;
+    background: url("../images/decor/about-plate.png") no-repeat 85% 65%,
+                url("../images/bgs/light-pattern.jpg") repeat center top;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+    .chief-words{
+        float: left;
+        text-align: center;
+        max-width: 430px;
+        margin-left: 8.8%;
+        padding-bottom: 282px;
+        background: url("../images/decor/cook.png") no-repeat 67% 95%;
+    }
+
+    .chief-words h2{
+        color: #cc9900; 
+    }
+
+    .chief-words .descr{   
+        line-height: 25px;
+        font-size: 1.2em;
+    }
+
+.ingredients{
+    position: relative;
+    background: black url('../images/national/FoodAtUnawatuna_RiceAndPrawns.jpg') repeat center 0 fixed;
+    padding: 100px 0;
+}
+
+    .ingredients-descr{
+        padding: 75px 5.6% 78px 5.6%;
+        float: right;
+        text-align: center;
+        max-width: 430px;
+        margin-right: 3.2%;
+        text-align: center;
+        background-color: rgba(0,0,0,0.67);
+        font-family: 'EB Garamond', serif;
+        font-size: 1.2em;
+    }
+
+    .ingredients-descr h2{
+        margin-bottom: 66px;
+        color: white;
+    }
+
+    .ingredients-descr .descr{
+        margin-bottom: 60px;
+        color: white;
+        line-height: 24px;
+    }
+
+    .ingredients-imgs{
+
+    }
+
+    .ingredients-nav{
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .ingredients-nav .ingredients-item{
+        display: inline-block;
+        margin-left: 24px;
+        width: 100px;
+        height: 100px;
+        border: 6px solid #212325;
+        border-radius: 50%;
+        font-size: 0px;
+        transition: 0.2s;
+    }
+
+    .ingredients-nav .ingredients-item:hover{
+        transform: scale(1.2);
+    }
+
+    .ingredients-nav .ingredients-item:first-child{
+        margin-left: 0px;
+        opacity: 0.7;
+    }
+
+    .ingr1{
+        background: url("../images/national/rice.jpg") no-repeat 50% 50%;
+    }
+
+    .ingr2{
+        background: url("../images/national/Morkov.jpg") no-repeat 50% 50%;
+    }
+
+    .ingr3{
+        background: url("../images/national/luk.jpg") no-repeat 50% 50%;
+    }
+
+.menu{
+    position: relative;
+    background: url('../images/bgs/menu-pattern.jpg') repeat center top;
+    padding: 100px 0;
+}
+
+    .menu h2{
+        color: #cc9900; 
+        text-align: center;
+    }
+
+    .dishes-list{
+        max-width: 770px;
+        margin: 0 auto;
+    }
+
+        .dish-wrap{
+            margin-bottom: 40px;
+        }
+
+        .dish-photo{
+            margin-top: 10px;
+            width: 170px;
+            height: 170px;
+            border: 1px solid grey;
+            border-radius: 50%;
+            overflow: hidden;
+            transition: 0.2s;
+        }
+
+        .dish-photo:hover{
+            transform: scale(1.1);
+        }
+
+        .dish-photo.right{
+            float: right;
+            margin-left: 20px;
+        }
+
+        .dish-photo.left{
+            float: left;
+            margin-right: 20px;
+        }
+        
+        .dish-photo.right + .dish-descr{
+            padding-right: 30%;
+        }
+
+        .dish-photo.left + .dish-descr{
+            padding-left: 30%;
+        }
+
+        .dish-descr{
+            padding-top: 10px;
+        }
+
+            h3.dish-name-price{
+                color: #cc9900;
+                padding-bottom: 10px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                margin-bottom: 10px;
+            }
+
+            .dish-name-price:after{
+                display: none;
+            }
+
+            .dish-name-price .price{
+                float: right;
+            }
+
+        .dish-text{
+            font-family: 'EB Garamond', serif;
+            font-size: 1.2em;
+            text-align: justify;
+        }
+
+.reviews{
+    position: relative;
+    background: black url("../images/national/Hyderabadi_Chicken_Biryani.jpg") repeat center 0 fixed;
+    padding: 100px 0;
+}
+
+    .reviews-block{
+        padding: 75px 5.6% 70px 5.6%;
+        margin: 0 auto;
+        max-width: 630px;
+        background-color: rgba(0,0,0,0.67);
+        color: white;
+        text-align: center;
+    }
+    
+    .reviews-block h2:after{
+        background-image: url("../images/decor/hX_after.png");
+    }
+
+    .reviews-block h2{
+        margin-bottom: 75px;
+    }
+
+    .review-text{
+        font-family: 'Kurale', serif;
+        font-size: 25px;
+        line-height: 45px;
+        margin-bottom: 25px;
+    }
+
+    .review-author{
+        font-family: 'EB Garamond', serif;
+        font-size: 1.125em;
+        line-height: 45px;
+    }
+
+.reservations{
+    position: relative;
+    background: url("../images/bgs/light-pattern.jpg") repeat center top;
+    padding: 100px 0 102px 0;
+}
+    
+    .two-images{
+        float: left;
+        margin-left: 2.4%;
+        width: 45%;
+    }
+
+    .two-images:first-of-type{
+        float: left;
+    }
+
+    .two-images:last-of-type{
+        float: right;
+    }
+
+        .two-images img{
+            width: 100%;
+            height: 508px;
+            overflow: hidden;
+        }
+
+    .reserv-decor-imgs{
+        float: left;
+        width: 50%;
+    }
+
+    .reservation-part{
+        float: left;
+        width: 50%;
+        text-align: center;
+    }
+
+    .reserv-part-inside{
+        padding: 0px 10%;
+    }
+
+        .reservation-part h2{
+            color: #cc9900; 
+            margin-bottom: 65px;
+        }
+    
+        .reservation-part .descr{
+            font-family: 'EB Garamond', serif;
+            font-size: 1.2em;
+            margin-bottom: 60px;
+        }
+
+        .reservation-part .phone{
+            font-size: 2.2em;
+        }
+
+            .reservation-part .phone a{
+                font-family: 'Kurale', serif;
+                text-decoration: none;
+                color: #cc9900; 
+            }
+
+.contacts{
+    position: relative;
+    background-color: #191919;
+    background: url("../images/bgs/bg-dark-4819.png") repeat;
+    color: white;
+    padding: 40px 0 36px 0;
+    text-align: center;
+}
+
+    .contacts h3{
+        margin-bottom: 55px;
+    }
+
+    .to-map{
+        display: block;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 1.2em;
+        color: white;
+        text-decoration: none;
+        font-style: italic;
+    }
+
+    .to-map:hover{
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    .about-us-text,
+    .opening-hours-text,
+    .our-location-text{
+        font-size: 1.2em;
+    }
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 1160px) {
+
+    .header-menu{
+        float: none;
+        clear: right;
+
+    }
+
+    .header-menu ul{
+        text-align: center;
+    }
+
+    .header-menu li{
+        padding: 10px 15px;
+    }
+
+    .header-social{
+        margin: 0 auto;
+        float: none;
+    }
+
+    .header-social ul{
+        text-align: center;
+    }
+
+    .logo-menu{
+        margin-bottom: 0px;
+    }
+
+    .callout-text{
+        font-size: 2.5em;
+    }
+
+    .about{
+        background: url("../images/bgs/light-pattern.jpg") repeat center top;
+    }
+
+    .chief-words{
+        margin: 0 auto;
+        float: none;
+    }
+
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 750px) {
+
+/**************************** GRID ****************************/
+.col { margin: 1% 0 1% 0%;}
+.span_12_of_12 {
+    width: 100%; 
+}
+.span_11_of_12 {
+    width: 100%; 
+}
+.span_10_of_12 {
+    width: 100%; 
+}
+.span_9_of_12 {
+    width: 100%; 
+}
+.span_8_of_12 {
+    width: 100%; 
+}
+.span_7_of_12 {
+    width: 100%; 
+}
+.span_6_of_12 {
+    width: 100%; 
+}
+.span_5_of_12 {
+    width: 100%; 
+}
+.span_4_of_12 {
+    width: 100%; 
+}
+.span_3_of_12 {
+    width: 100%; 
+}
+.span_2_of_12 {
+    width: 100%; 
+}
+.span_1_of_12 {
+    width: 100%; 
+}
+
+h2{
+    font-size: 1.5em;
+    margin-bottom: 64px;
+}
+
+
+/*************** HEADER ***************/
+
+.header-menu{
+    margin: 0 auto;
+    float: none;
+}
+
+    .header-nav{
+        padding: 20px 0;
+    }
+
+    .header-nav li{
+        display: inline-block;
+        text-align: center;
+        padding: 10px 20px;
+        line-height: 20px;
+        list-style: none;
+        font-size: 1.3125em;
+    }
+
+
+
+.callout-text{
+    font-size: 1.6em;
+}
+
+    .header-buttons a{
+        width: 30%;
+        font-size: 1em;
+    }
+
+/*************** MENU ***************/ 
+
+    .dish-photo.right{
+        float: none;
+        margin: 0 auto;
+    }
+
+    .dish-photo.left{
+        float: none;
+        margin: 0 auto;
+    }
+
+    .dish-photo.right + .dish-descr{
+        padding: 10px 10% 30px 30px;
+    }
+
+    .dish-photo.left + .dish-descr{
+        padding: 10px 10% 30px 30px;
+    }
+
+    .menu h2{
+        color: #cc9900; 
+        text-align: center;
+        margin-bottom: 120px;
+    }
+
+
+    .ingredients-nav li:last-child{
+        display: none;
+    }
+
+    .reservations{
+        text-align: center;
+    }
+
+    .reserv-decor-imgs{
+        margin-bottom: 80px;
+        width: 100%;
+    }
+
+    .two-images:first-of-type{
+        float: left;
+        margin-left: 0px;
+        width: 48%;
+    }
+
+    .two-images:last-of-type{
+        float: right;
+        width: 48%;
+    }
+
+    .reservation-part{
+        float: none;
+        
+    }
+
+    .reservation-part{
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .reserv-part-inside{
+        padding: 0px;
+    }
+
+        .reservation-part h2{
+            color: #cc9900; 
+            margin-bottom: 65px;
+        }
+    
+    .reservation-part .descr{
+        margin-bottom: 20px;
+        padding: 0px 0px;
+    }
+
+
+    .reviews-block h2{
+        margin-bottom: 80px;
+    }
+
+    .review-text{
+        font-size: 1.2em;
+        line-height: 1.4em;
+    }
+
+    .about{
+        background: url("../images/bgs/light-pattern.jpg") repeat-y center top;
+    }
+
+    .about-us, .opening-hours{
+        margin-bottom: 40px;
+    }
+
+
+
+    .ingredients-descr{
+        float: none;
+        margin: 0 auto;
+    }
+
+    .reservation-part .phone{
+        font-size: 1.6em;
+    }
+
+}
