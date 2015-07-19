@@ -6,7 +6,7 @@ $(document).ready(function(){
                 var $bgobj = $(this); // создаем объект
                 $(window).scroll(function() {
                     var yPos = -( ( $(window).scrollTop() - $bgobj.offset().top ) / $bgobj.data('speed')); // вычисляем коэффициент
-     
+                    if ($bgobj.hasClass('cover')) yPos = -yPos;
                     // Присваиваем значение background-position
                     var coords = 'center '+ yPos + 'px';
                     // Создаем эффект Parallax Scrolling

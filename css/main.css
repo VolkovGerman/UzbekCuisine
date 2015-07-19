@@ -222,7 +222,7 @@ h3:after{
 
 .cover{
     position: relative;
-    background: black url("../images/bgs/chaihan.jpg") repeat center 0 fixed;
+    background: black url("../images/bgs/chaihan.jpg") repeat center 0;
     padding-bottom: 143px;
 }
 
@@ -932,3 +932,9 @@ h2{
         clear: both;
     }
 }
+
+@media only screen and (min-width: 1400px){
+    .cover, .ingredients, .reviews{
+        background-size: 100%;
+    }
+} 
