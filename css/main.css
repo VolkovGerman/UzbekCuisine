@@ -222,7 +222,7 @@ h3:after{
 
 .cover{
     position: relative;
-    background: black url("../images/bgs/hd.jpg") repeat center 0 fixed;
+    background: black url("../images/bgs/chaihan.jpg") repeat center 0 fixed;
     padding-bottom: 143px;
 }
 
@@ -233,13 +233,31 @@ h3:after{
 
         .logo{
             float: left;
-            max-width: 220px;
+            width: 220px;
+            line-height: 100px;
             height: 100px;
             overflow: hidden;
             text-align: center;
             /* Позиционирование лого */
             margin-left: 5px;
             margin-top: 8px;
+            color: #eeeeee;
+            font-family: 'Kurale', serif;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        .logo a{
+            color: #eeeeee;
+            text-decoration: none;
+        }
+
+        .logo a:hover{
+            text-decoration: underline;
+        }
+
+        .logo img{
+            display: none;
         }
 
         .header-social{
@@ -303,13 +321,11 @@ h3:after{
         position: relative;
         line-height: 1.525em;
         text-align: center;
-        font-family: 'Yeseva One', cursive;
-        font-size: 6em;
-        color: green;
-        text-shadow: white 1px 1px 0, white -1px -1px 0, 
-                     white -1px 1px 0, white 1px -1px 0;
+        font-family: 'Kurale', serif;
+        font-size: 8em;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        color: #eeeeee;
         margin-bottom: 99px;
-        color: green;
     }
 
     .header-buttons{
@@ -357,7 +373,7 @@ h3:after{
 .header-phone{
         text-align: center;
         padding-top: 10px;
-        text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
 
         position: absolute;
         left: 0; right: 0;
@@ -498,9 +514,6 @@ h3:after{
             margin-top: 10px;
             width: 170px;
             height: 170px;
-            border: 1px solid grey;
-            border-radius: 50%;
-            overflow: hidden;
             transition: 0.2s;
         }
 
@@ -715,7 +728,7 @@ h3:after{
     }
 
     .callout-text{
-        font-size: 2.5em;
+        font-size: 5em;
     }
 
     .about{
@@ -798,10 +811,8 @@ h2{
         font-size: 1.3125em;
     }
 
-
-
 .callout-text{
-    font-size: 1.6em;
+    font-size: 3em;
 }
 
     .header-buttons a{
@@ -914,4 +925,10 @@ h2{
         font-size: 1.6em;
     }
 
+}
+
+@media only screen and (max-width: 330px) {
+    .header-social{
+        clear: both;
+    }
 }
