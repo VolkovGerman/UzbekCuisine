@@ -222,7 +222,7 @@ h3:after{
 
 .cover{
     position: relative;
-    background: black url("../images/bgs/chaihan.jpg") repeat center 0;
+    background: black url("../images/bgs/5950311.jpg") repeat center 0; 
     padding-bottom: 143px;
 }
 
@@ -371,17 +371,18 @@ h3:after{
     }
 
 .header-phone{
-        text-align: center;
-        padding-top: 10px;
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    text-align: center;
+    padding-top: 10px;
+    
 
-        position: absolute;
-        left: 0; right: 0;
+    position: absolute;
+    left: 0; right: 0;
 }
 
 .header-phone a{
-    color: white;
+    color: #eeeeee;
     letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,1);
     font-family: 'Kurale', serif;
     font-size: 1.8em;
     font-weight: bold;
@@ -421,7 +422,7 @@ h3:after{
 
 .ingredients{
     position: relative;
-    background: black url('../images/national/FoodAtUnawatuna_RiceAndPrawns.jpg') repeat center 0 fixed;
+    background: black url('../images/national/FoodAtUnawatuna_RiceAndPrawns.jpg') repeat center 0; 
     padding: 100px 0;
 }
 
@@ -566,7 +567,7 @@ h3:after{
 
 .reviews{
     position: relative;
-    background: black url("../images/national/Hyderabadi_Chicken_Biryani.jpg") repeat center 0 fixed;
+    background: black url("../images/national/Hyderabadi_Chicken_Biryani.jpg") repeat center 0; 
     padding: 100px 0;
 }
 
