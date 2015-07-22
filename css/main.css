@@ -222,7 +222,8 @@ h3:after{
 
 .cover{
     position: relative;
-    background: black url("../images/bgs/5950311.jpg") repeat center 0; 
+    background: black url("../images/bgs/5950311.jpg") repeat center 0;
+    background-size: cover; 
     padding-bottom: 143px;
 }
 
@@ -423,6 +424,7 @@ h3:after{
 .ingredients{
     position: relative;
     background: black url('../images/national/FoodAtUnawatuna_RiceAndPrawns.jpg') repeat center 0; 
+    background-size: cover; 
     padding: 100px 0;
 }
 
@@ -513,16 +515,12 @@ h3:after{
 
         .dish-photo{
             margin-top: 10px;
-            width: 170px;
-            height: 170px;
-            transition: 0.2s;
-        }
-
-        .dish-photo:hover{
-            transform: scale(1.1);
+        /*    width: 170px;
+            height: 170px;  */
         }
 
         .dish-photo.right{
+            display: inline;
             float: right;
             margin-left: 20px;
         }
@@ -544,7 +542,7 @@ h3:after{
             padding-top: 10px;
         }
 
-            h3.dish-name-price{
+            .dish-name-price{
                 color: #cc9900;
                 padding-bottom: 10px;
                 border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -568,6 +566,7 @@ h3:after{
 .reviews{
     position: relative;
     background: black url("../images/national/Hyderabadi_Chicken_Biryani.jpg") repeat center 0; 
+    background-size: cover; 
     padding: 100px 0;
 }
 
@@ -823,6 +822,29 @@ h2{
 
 /*************** MENU ***************/ 
 
+    .dish-name-price{
+        text-align: center;
+        line-height: 1.5em;
+    }
+
+    .dish-name-price .name{
+        
+    }
+
+    .dish-name-price .name:after{
+        content: '\A';
+        white-space: pre;
+    }
+
+    .dish-name-price .price{
+        clear: both;
+        float: none;
+    }
+    
+    .dish-wrap{
+        margin-bottom: 30px;
+    }
+
     .dish-photo.right{
         float: none;
         margin: 0 auto;
@@ -830,26 +852,47 @@ h2{
 
     .dish-photo.left{
         float: none;
+        margin-bottom: 20px;
+        margin-right: 0px;
+        margin-bottom: 5px;
+    }
+
+    .dish-photo.left img{
+        display: block;
         margin: 0 auto;
     }
 
     .dish-photo.right + .dish-descr{
-        padding: 10px 10% 30px 30px;
+        padding: 10px 30px 10px 30px;
     }
 
     .dish-photo.left + .dish-descr{
-        padding: 10px 10% 30px 30px;
+        padding: 10px 30px 10px 30px;
     }
 
     .menu h2{
         color: #cc9900; 
         text-align: center;
-        margin-bottom: 120px;
+        margin-bottom: 80px;
     }
 
+    .ingredients-nav .ingredients-item:first-child{
+        margin: 0 auto;
+    }
 
-    .ingredients-nav li:last-child{
-        display: none;
+    .ingredients-nav .ingredients-item{
+        margin-left: 0px;
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+    .ingredients-descr{
+        padding-bottom: 20px;
+    }
+
+    .ingredients-descr .descr{
+        margin-bottom: 20px;
     }
 
     .reservations{
@@ -859,6 +902,10 @@ h2{
     .reserv-decor-imgs{
         margin-bottom: 80px;
         width: 100%;
+    }
+
+    .two-images img{
+        height: 400px;
     }
 
     .two-images:first-of-type{
