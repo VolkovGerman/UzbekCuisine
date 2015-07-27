@@ -1,3 +1,41 @@
+/*************************** ANIMATIONS ***************************/
+
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+.animated {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
 /*************************** SYMBOLS ***************************/
 
 @charset "UTF-8";
@@ -210,6 +248,13 @@ h3:after{
     min-height: 50px;
     background-position: center 15px;
     background-image: url("../images/decor/small_hX_after_white.png");
+}
+
+.not-visible{
+    display: none;
+    visibility: none;
+    z-index: -5000;
+    opacity: 0;
 }
 
 
@@ -511,6 +556,7 @@ h3:after{
 
         .dish-wrap{
             margin-bottom: 40px;
+            cursor: pointer;
         }
 
         .dish-photo{
@@ -695,6 +741,86 @@ h3:after{
     .our-location-text{
         font-size: 1.2em;
     }
+
+
+/**** POPUPS ****/
+
+.popup{
+    z-index: 100;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    overflow-y: auto;
+}
+
+.popup .dish-popup-wrap{
+    position: relative;
+    left: 10px;
+    margin: 2% auto 2% auto;
+    width: 100%;
+    max-width: 770px;
+
+    background: white;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.7);
+}
+
+.btn-close{
+    position: absolute;
+    top: 0; right: 0;
+    width: 90px;
+    height: 90px;
+    font-size: 0px;
+}
+
+.btn-close:before{
+    content: '';
+    position: absolute;
+    top: 30px; right: 10px;
+    display: block;
+    width: 40px;
+    height: 7px;
+    background: #cc9900;
+    border-radius: 5px;
+    transform: rotate(-45deg);
+}
+
+.btn-close:after{
+    content: '';
+    position: absolute;
+    top: 30px; right: 10px;
+    display: block;
+    width: 40px;
+    height: 7px;
+    background: #cc9900;
+    border-radius: 5px;
+    transform: rotate(45deg);
+}
+
+.popup .dish-popup{
+}
+
+.dish-popup .dish-image-wrap{
+    width: 100%;
+    font-size: 0px;
+}
+
+.dish-popup .dish-image-wrap img{
+    max-width: 100%;
+    height: auto;
+}
+
+.dish-popup h2{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 20px;
+    color: #cc9900;
+    text-align: center;
+}
+
+.dish-popup .dish-text{
+    padding-left: 5%;
+    padding-right: 5%;
+}
 
 /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
 
@@ -972,6 +1098,10 @@ h2{
     .reservation-part .phone{
         font-size: 1.6em;
     }
+
+.popup .dish-popup-wrap{
+    left: 0;
+}
 
 }
 

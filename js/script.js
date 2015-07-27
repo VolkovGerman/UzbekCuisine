@@ -28,6 +28,26 @@ $(document).ready(function(){
       return false;
     });
 
+    $('.btn-close').click(function(event){
+        event.preventDefault();
+
+        $('html, body').css('overflow', 'auto');
+        $(this).parent().parent().addClass('not-visible');
+
+        return false;
+    });
+
+    $('.menu .dish-wrap').click(function(){
+        var $num = $(this).index() + 1;
+        
+        $('.popup.dish-details h2').text($(this).find('.dish-name-price .name').text());
+        $('.popup.dish-details .dish-photo img').attr('src', ($('.dish-texts .' + $num + ' .src').text()));
+        $('.popup.dish-details .dish-text').html($('.dish-texts .' + $num + ' .text').html());
+        $('html, body').css('overflow', 'hidden');
+        $('.popup.dish-details').removeClass('not-visible');
+        $('.dish-popup-wrap').addClass('animated zoomIn');
+    });
+
     $(document).ready(function(){
       $(".owl-carousel").owlCarousel({
         items: 1,
