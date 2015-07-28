@@ -45,6 +45,9 @@ $(document).ready(function(){
         $('.popup.dish-details .dish-photo img').attr('src', ($('.dish-texts .' + $num + ' .src').text()));
         $('.popup.dish-details .dish-text').html($('.dish-texts .' + $num + ' .text').html());
 
+        $('body').css('overflow', 'hidden');
+        $('dish-details').css('width', $(window).width());
+
         $('.popup.dish-details').removeClass('not-visible');
     });
 
