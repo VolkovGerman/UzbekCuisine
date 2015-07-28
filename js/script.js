@@ -31,7 +31,7 @@ $(document).ready(function(){
     $('.btn-close').click(function(event){
         event.preventDefault();
 
-        $('.dish-popup-wrap').removeClass('animated zoomIn');
+        $('body').css('overflow', 'auto');
 
         $(this).parent().parent().addClass('not-visible');
 
@@ -46,8 +46,6 @@ $(document).ready(function(){
         $('.popup.dish-details .dish-text').html($('.dish-texts .' + $num + ' .text').html());
 
         $('body').css('overflow', 'hidden');
-        $('.popup').css('width', $(window).width());
-        $('.popup').css('height', $(window).height());
 
         $('.popup.dish-details').removeClass('not-visible');
     });
