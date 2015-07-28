@@ -47,6 +47,7 @@ $(document).ready(function(){
 
         $('body').css('overflow', 'hidden');
         $('dish-details').css('width', $(window).width());
+        $('dish-details').css('height', $(window).height());
 
         $('.popup.dish-details').removeClass('not-visible');
     });
