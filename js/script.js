@@ -31,23 +31,32 @@ $(document).ready(function(){
     $('.btn-close').click(function(event){
         event.preventDefault();
 
-        $('body').css('overflow', 'auto');
+        $('.popup.dish-details').addClass('animated zoomOut');
 
-        $(this).parent().parent().addClass('not-visible');
+        setTimeout(function(){
+            $('.popup.dish-details').removeClass('animated zoomIn zoomOut');
+            $('.popup.dish-details').addClass('not-visible');
+        }, 500);
 
         return false;
     });
 
     $('.menu .dish-wrap').click(function(){
-        var $num = $(this).index() + 1;
+        var $num = $(this).index();
         
         $('.popup.dish-details h2').text($(this).find('.dish-name-price .name').text());
-        $('.popup.dish-details .dish-photo img').attr('src', ($('.dish-texts .' + $num + ' .src').text()));
+        $('.popup.dish-details .dish-image-wrap img').attr('src', $('.dish-texts .' + $num + ' .src').text());
         $('.popup.dish-details .dish-text').html($('.dish-texts .' + $num + ' .text').html());
 
-        $('body').css('overflow', 'hidden');
+        $('html, body').animate({
+            scrollTop: $(".menu h2").offset().top
+        }, 300);
 
-        $('.popup.dish-details').removeClass('not-visible');
+        setTimeout(function(){
+            $('.popup.dish-details').addClass('animated zoomIn');
+            $('.popup.dish-details').removeClass('not-visible');
+        }, 400);
+        
     });
 
     $(document).ready(function(){

@@ -29,6 +29,43 @@
   animation-name: zoomIn;
 }
 
+@-webkit-keyframes zoomOut {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.zoomOut {
+  -webkit-animation-name: zoomOut;
+  animation-name: zoomOut;
+}
+
 .animated {
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
@@ -257,6 +294,13 @@ h3:after{
     opacity: 0;
 }
 
+* {
+    -webkit-transform: translatez(0);
+    -moz-transform: translatez(0);
+    -ms-transform: translatez(0);
+    -o-transform: translatez(0);
+    transform: translatez(0);
+}
 
 /******************************** LOCAL RULES ********************************/
 
@@ -267,7 +311,7 @@ h3:after{
 
 .cover{
     position: relative;
-    background: black url("../images/bgs/5950311.jpg") repeat center 0;
+    background: black url("../images/bgs/bg_header.jpg") repeat center 0;
     background-size: cover; 
     padding-bottom: 143px;
 }
@@ -443,7 +487,7 @@ h3:after{
 .about{
     position: relative;
     background: url("../images/decor/about-plate.png") no-repeat 85% 65%,
-                url("../images/bgs/light-pattern.jpg") repeat center top;
+                url("../images/bgs/bg_pattern_circle.jpg") repeat center top;
     padding-top: 100px;
     padding-bottom: 100px;
 }
@@ -468,7 +512,7 @@ h3:after{
 
 .ingredients{
     position: relative;
-    background: black url('../images/national/FoodAtUnawatuna_RiceAndPrawns.jpg') repeat center 0; 
+    background: black url('../images/bgs/bg_ingredients.jpg') repeat center 0; 
     background-size: cover; 
     padding: 100px 0;
 }
@@ -527,20 +571,20 @@ h3:after{
     }
 
     .ingr1{
-        background: url("../images/national/rice.jpg") no-repeat 50% 50%;
+        background: url("../images/decor/rice.jpg") no-repeat 50% 50%;
     }
 
     .ingr2{
-        background: url("../images/national/Morkov.jpg") no-repeat 50% 50%;
+        background: url("../images/decor/Morkov.jpg") no-repeat 50% 50%;
     }
 
     .ingr3{
-        background: url("../images/national/luk.jpg") no-repeat 50% 50%;
+        background: url("../images/decor/luk.jpg") no-repeat 50% 50%;
     }
 
 .menu{
     position: relative;
-    background: url('../images/bgs/menu-pattern.jpg') repeat center top;
+    background: url('../images/bgs/bg_pattern_rhombus.jpg') repeat center top;
     padding: 100px 0;
 }
 
@@ -550,6 +594,7 @@ h3:after{
     }
 
     .dishes-list{
+        position: relative;
         max-width: 770px;
         margin: 0 auto;
     }
@@ -557,6 +602,15 @@ h3:after{
         .dish-wrap{
             margin-bottom: 40px;
             cursor: pointer;
+        }
+
+        .dish-wrap:hover .dish-name-price .name,
+        .dish-wrap:hover .dish-name-price .price{
+            color: #826100;
+        }
+
+        .dish-wrap:hover .dish-name-price{
+            border-bottom: 1px solid rgba(0, 0, 0, 0.7);
         }
 
         .dish-photo{
@@ -600,7 +654,14 @@ h3:after{
             }
 
             .dish-name-price .price{
+                transition: 0.2s;
                 float: right;
+            }
+
+            .dish-name-price .price,
+            .dish-name-price .name,
+            .dish-name-price{
+                transition: 1s;
             }
 
         .dish-text{
@@ -611,7 +672,7 @@ h3:after{
 
 .reviews{
     position: relative;
-    background: black url("../images/national/Hyderabadi_Chicken_Biryani.jpg") repeat center 0; 
+    background: black url("../images/bgs/bg_reviews.jpg") repeat center 0; 
     background-size: cover; 
     padding: 100px 0;
 }
@@ -648,7 +709,7 @@ h3:after{
 
 .reservations{
     position: relative;
-    background: url("../images/bgs/light-pattern.jpg") repeat center top;
+    background: url("../images/bgs/bg_pattern_circle.jpg") repeat center top;
     padding: 100px 0 102px 0;
 }
     
@@ -711,7 +772,7 @@ h3:after{
 .contacts{
     position: relative;
     background-color: #191919;
-    background: url("../images/bgs/bg-dark-4819.png") repeat;
+    background: url("../images/bgs/bg_pattern_dark.png") repeat;
     color: white;
     padding: 40px 0 36px 0;
     text-align: center;
@@ -747,35 +808,39 @@ h3:after{
 
 .popup{
     z-index: 100;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.5);
-    overflow-y: auto;
+    position: absolute;
+    top: 0; left: 0; right: 0;
 }
 
 .popup .dish-popup-wrap{
     position: relative;
     left: 0px;
-    margin: 2% auto 2% auto;
-    width: 100%;
+    margin: 0 auto;
+    width: 95%;
     max-width: 800px;
 
-    background: white;
-    box-shadow: 0px 0px 20px rgba(0,0,0,0.7);
+    background: url("../images/bgs/bg_pattern_circle.jpg") repeat-y center top;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+
+    transition: 0.5s;
+}
+
+.popup .dish-popup-wrap:hover{
+    box-shadow: 0px 0px 30px rgba(0,0,0,0.7);
 }
 
 .btn-close{
     position: absolute;
     top: 0; right: 0;
-    width: 90px;
-    height: 90px;
+    width: 50px;
+    height: 50px;
     font-size: 0px;
 }
 
 .btn-close:before{
     content: '';
     position: absolute;
-    top: 30px; right: 10px;
+    top: 20px; right: 5px;
     display: block;
     width: 40px;
     height: 7px;
@@ -787,7 +852,7 @@ h3:after{
 .btn-close:after{
     content: '';
     position: absolute;
-    top: 30px; right: 10px;
+    top: 20px; right: 5px;
     display: block;
     width: 40px;
     height: 7px;
@@ -1081,7 +1146,7 @@ h2{
     }
 
     .about{
-        background: url("../images/bgs/light-pattern.jpg") repeat-y center top;
+        background: url("../images/bgs/bg_pattern_circle.jpg") repeat-y center top;
     }
 
     .about-us, .opening-hours{
@@ -1101,6 +1166,12 @@ h2{
 
 .popup .dish-popup-wrap{
     left: 0;
+}
+
+.dish-popup h2{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 1.2em;
 }
 
 }
