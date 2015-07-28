@@ -300,6 +300,8 @@ h3:after{
     -ms-transform: translatez(0);
     -o-transform: translatez(0);
     transform: translatez(0);
+
+    word-wrap: break-word;
 }
 
 /******************************** LOCAL RULES ********************************/
@@ -323,7 +325,7 @@ h3:after{
 
         .logo{
             float: left;
-            width: 220px;
+            width: 180px;
             line-height: 100px;
             height: 100px;
             overflow: hidden;
@@ -1058,7 +1060,7 @@ h2{
     }
 
     .dish-photo.left + .dish-descr{
-        padding: 10px 30px 10px 30px;
+        padding: 10px 5% 10px 5%;
     }
 
     .menu h2{
@@ -1179,6 +1181,10 @@ h2{
 @media only screen and (max-width: 330px) {
     .header-social{
         clear: both;
+    }
+
+    .logo{
+        width: 100%;
     }
 }
 
