@@ -31,7 +31,8 @@ $(document).ready(function(){
     $('.btn-close').click(function(event){
         event.preventDefault();
 
-        $('html, body').css('overflow', 'auto');
+        $('.dish-popup-wrap').removeClass('animated zoomIn');
+
         $(this).parent().parent().addClass('not-visible');
 
         return false;
@@ -43,9 +44,8 @@ $(document).ready(function(){
         $('.popup.dish-details h2').text($(this).find('.dish-name-price .name').text());
         $('.popup.dish-details .dish-photo img').attr('src', ($('.dish-texts .' + $num + ' .src').text()));
         $('.popup.dish-details .dish-text').html($('.dish-texts .' + $num + ' .text').html());
-        $('html, body').css('overflow', 'hidden');
+
         $('.popup.dish-details').removeClass('not-visible');
-        $('.dish-popup-wrap').addClass('animated zoomIn');
     });
 
     $(document).ready(function(){
