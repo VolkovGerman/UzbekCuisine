@@ -1,2 +1,2 @@
 # UzbekCuisine
-Web project
+http://volkovgerman.github.io/UzbekCuisine
