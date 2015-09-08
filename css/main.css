@@ -12,7 +12,20 @@
   }
 }
 
-@keyframes zoomIn {
+@-moz-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    -moz-transform: scale3d(.3, .3, .3);
+         transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes zoomIn {
   0% {
     opacity: 0;
     -webkit-transform: scale3d(.3, .3, .3);
@@ -24,12 +37,60 @@
   }
 }
 
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    -moz-transform: scale3d(.3, .3, .3);
+         transform: scale3d(.3, .3, .3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
 .zoomIn {
   -webkit-animation-name: zoomIn;
-  animation-name: zoomIn;
+  -moz-animation-name: zoomIn;
+    -o-animation-name: zoomIn;
+       animation-name: zoomIn;
 }
 
 @-webkit-keyframes zoomOut {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes zoomOut {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    -moz-transform: scale3d(.3, .3, .3);
+         transform: scale3d(.3, .3, .3);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes zoomOut {
   0% {
     opacity: 1;
   }
@@ -53,7 +114,8 @@
   50% {
     opacity: 0;
     -webkit-transform: scale3d(.3, .3, .3);
-    transform: scale3d(.3, .3, .3);
+    -moz-transform: scale3d(.3, .3, .3);
+         transform: scale3d(.3, .3, .3);
   }
 
   100% {
@@ -63,14 +125,20 @@
 
 .zoomOut {
   -webkit-animation-name: zoomOut;
-  animation-name: zoomOut;
+  -moz-animation-name: zoomOut;
+    -o-animation-name: zoomOut;
+       animation-name: zoomOut;
 }
 
 .animated {
   -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s;
+  -moz-animation-duration: 0.5s;
+    -o-animation-duration: 0.5s;
+       animation-duration: 0.5s;
   -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+       animation-fill-mode: both;
 }
 
 /*************************** SYMBOLS ***************************/
@@ -315,7 +383,9 @@ h3:after{
 .cover{
     position: relative;
     background: black url("../images/bgs/bg_header.jpg") repeat center 0;
-    background-size: cover; 
+    -moz-background-size: cover;
+      -o-background-size: cover;
+         background-size: cover; 
     padding-bottom: 143px;
     padding-top: 170px;
 }
@@ -378,7 +448,10 @@ h3:after{
             .social-icons li a{
                 text-decoration: none;
                 color: white;
-                transition: 0.3s;
+                -webkit-transition: 0.3s;
+                   -moz-transition: 0.3s;
+                     -o-transition: 0.3s;
+                        transition: 0.3s;
             }
 
             .social-icons li a:hover{
@@ -420,7 +493,9 @@ h3:after{
             background-color: #232222;
             border-bottom: 1px solid #484848;
             z-index: 99999;
-            box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.5);
+            -webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.5);
+               -moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.5);
+                    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.5);
             min-width: 462px;
         }   
 
@@ -482,7 +557,6 @@ h3:after{
             -webkit-transition: all 0.2s ease-in-out 0s;
             -moz-transition: all 0.2s ease-in-out 0s;
             -o-transition: all 0.2s ease-in-out 0s;
-            -ms-transition: all 0.2s ease-in-out 0s;
             transition: all 0.2s ease-in-out 0s;
         }
  
@@ -569,7 +643,9 @@ h3:after{
         padding: 0;
         margin-right: 0px;
         z-index: 100000;
-        box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
+        -webkit-box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
+           -moz-box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
+                box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
         overflow-y: auto;
     }
      
@@ -617,7 +693,9 @@ h3:after{
         top: 0;
         left: 0;
         width: 100%;
-        box-shadow: none;
+        -webkit-box-shadow: none;
+           -moz-box-shadow: none;
+                box-shadow: none;
     }
 
     .menu ul li a{
@@ -657,7 +735,10 @@ h3:after{
         line-height: 54px;
         font-size: 1.125em;
         text-decoration: none;
-        transition: 0.3s;
+        -webkit-transition: 0.3s;
+           -moz-transition: 0.3s;
+             -o-transition: 0.3s;
+                transition: 0.3s;
     }
 
     .header-buttons a:first-child{
@@ -738,7 +819,9 @@ h3:after{
 .ingredients{
     position: relative;
     background: black url('../images/bgs/bg_ingredients.jpg') repeat center 0; 
-    background-size: cover; 
+    -moz-background-size: cover; 
+      -o-background-size: cover; 
+         background-size: cover; 
     padding: 100px 0;
 }
 
@@ -781,13 +864,22 @@ h3:after{
         width: 100px;
         height: 100px;
         border: 6px solid #212325;
-        border-radius: 50%;
+        -webkit-border-radius: 50%;
+           -moz-border-radius: 50%;
+                border-radius: 50%;
         font-size: 0px;
-        transition: 0.2s;
+        -webkit-transition: 0.2s;
+           -moz-transition: 0.2s;
+             -o-transition: 0.2s;
+                transition: 0.2s;
     }
 
     .ingredients-nav .ingredients-item:hover{
-        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+           -moz-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+             -o-transform: scale(1.2);
+                transform: scale(1.2);
     }
 
     .ingredients-nav .ingredients-item:first-child{
@@ -879,14 +971,20 @@ h3:after{
             }
 
             .dish-name-price .price{
-                transition: 0.2s;
+                -webkit-transition: 0.2s;
+                   -moz-transition: 0.2s;
+                     -o-transition: 0.2s;
+                        transition: 0.2s;
                 float: right;
             }
 
             .dish-name-price .price,
             .dish-name-price .name,
             .dish-name-price{
-                transition: 1s;
+                -webkit-transition: 1s;
+                   -moz-transition: 1s;
+                     -o-transition: 1s;
+                        transition: 1s;
             }
 
         .dish-text{
@@ -898,7 +996,9 @@ h3:after{
 .reviews{
     position: relative;
     background: black url("../images/bgs/bg_reviews.jpg") repeat center 0; 
-    background-size: cover; 
+    -moz-background-size: cover; 
+      -o-background-size: cover; 
+         background-size: cover; 
     padding: 100px 0;
 }
 
@@ -1045,13 +1145,23 @@ h3:after{
     max-width: 800px;
 
     background: url("../images/bgs/bg_pattern_circle.jpg") repeat-y center top;
-    box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+       -moz-box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
+            box-shadow: 0px 0px 20px rgba(0,0,0,0.5);
 
-    transition: 0.5s;
+    -webkit-transition: 0.5s;
+
+       -moz-transition: 0.5s;
+
+         -o-transition: 0.5s;
+
+            transition: 0.5s;
 }
 
 .popup .dish-popup-wrap:hover{
-    box-shadow: 0px 0px 30px rgba(0,0,0,0.7);
+    -webkit-box-shadow: 0px 0px 30px rgba(0,0,0,0.7);
+       -moz-box-shadow: 0px 0px 30px rgba(0,0,0,0.7);
+            box-shadow: 0px 0px 30px rgba(0,0,0,0.7);
 }
 
 .btn-close{
@@ -1070,8 +1180,14 @@ h3:after{
     width: 40px;
     height: 7px;
     background: #cc9900;
-    border-radius: 5px;
-    transform: rotate(-45deg);
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    -webkit-transform: rotate(-45deg);
+       -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+         -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
 }
 
 .btn-close:after{
@@ -1082,8 +1198,14 @@ h3:after{
     width: 40px;
     height: 7px;
     background: #cc9900;
-    border-radius: 5px;
-    transform: rotate(45deg);
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
 }
 
 .popup .dish-popup{
