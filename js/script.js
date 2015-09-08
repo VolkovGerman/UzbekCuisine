@@ -1,22 +1,24 @@
 $(document).ready(function(){
-
-    /*
-    if ($(window).width() > 750){
-        $(document).ready(function(){
-            $('div[data-type="background"]').each(function(){
-                var $bgobj = $(this); // создаем объект
-                $(window).scroll(function() {
-                    var yPos = -( ( $(window).scrollTop() - $bgobj.offset().top ) / $bgobj.data('speed')); // вычисляем коэффициент
-                    if ($bgobj.hasClass('cover')) yPos = -yPos;
-                    // Присваиваем значение background-position
-                    var coords = 'center '+ yPos + 'px';
-                    // Создаем эффект Parallax Scrolling
-                    $bgobj.css({backgroundPosition: coords});
-                });
-            });
-        });
-    }
-    */
+    var touch = $('#touch-menu');
+    var menu  = $('.menu');
+    var menu_open = 0;
+ 
+    $(touch).on('click', function(e) {
+        e.preventDefault();
+        menu.slideToggle();
+        if (!menu_open)
+            touch.html("Меню &uarr;");
+        else
+            touch.html("Меню &darr;");
+        menu_open = !menu_open;
+    });
+    
+    $(window).resize(function(){
+        var w = $(window).width();
+        if(w > 767 && menu.is(':hidden')) {
+            menu.removeAttr('style');
+        }
+    });
 
     $('a[href^="#"]').click(function(){ //берем все ссылки атрибу href которых начинается с #
         var $element = $('#'+$(this).attr("href").substr(1));
@@ -41,7 +43,7 @@ $(document).ready(function(){
         return false;
     });
 
-    $('.menu .dish-wrap').click(function(){
+    $('.dishes-menu .dish-wrap').click(function(){
         var $num = $(this).index();
         
         $('.popup.dish-details h2').text($(this).find('.dish-name-price .name').text());
@@ -49,7 +51,7 @@ $(document).ready(function(){
         $('.popup.dish-details .dish-text').html($('.dish-texts .' + $num + ' .text').html());
 
         $('html, body').animate({
-            scrollTop: $(".menu h2").offset().top
+            scrollTop: $(".dishes-menu h2").offset().top
         }, 300);
 
         setTimeout(function(){

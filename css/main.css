@@ -241,6 +241,7 @@
 body{
     font-family: 'EB Garamond', serif;
     font-size: 1em;
+    min-width: 460px;
 }
 
 h1, h2, h3{
@@ -294,7 +295,7 @@ h3:after{
     opacity: 0;
 }
 
-* {
+.popup.dish-details{
     -webkit-transform: translatez(0);
     -moz-transform: translatez(0);
     -ms-transform: translatez(0);
@@ -316,6 +317,7 @@ h3:after{
     background: black url("../images/bgs/bg_header.jpg") repeat center 0;
     background-size: cover; 
     padding-bottom: 143px;
+    padding-top: 140px;
 }
 
     .logo-menu{
@@ -355,12 +357,14 @@ h3:after{
         .header-social{
             position: relative;
             float: right;
-            margin-left: 20px;
         }
 
             .social-icons{
                 margin: 0;
                 padding: 0;
+                padding-right: 30px;
+                padding-left: 30px;
+                line-height: 58px;
             }
 
             .social-icons li{
@@ -368,7 +372,6 @@ h3:after{
                 display: inline-block;
                 list-style: none;
                 padding: 10px 5px;
-                line-height: 100px;
                 font-size: 1.3125em;
             }
 
@@ -408,6 +411,226 @@ h3:after{
             .header-nav li a:hover{
                 text-decoration: underline;
             }
+/********************************************************************************************/
+        .navbar{
+            position: fixed !important;
+            left: 0;
+            right: 0;
+            min-height: 70px;
+            background-color: #232222;
+            border-bottom: 1px solid #484848;
+            z-index: 99999;
+            box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.5);
+            min-width: 462px;
+        }   
+
+        .navbar-header{
+            float: left;
+            min-height: 70px;
+        }
+
+        .navbar-brand{
+            display: block;
+            line-height: 70px;
+            margin-left: 50px;
+            font-family: 'Kurale', serif;
+            text-decoration: none;
+            font-size: 2em;
+            color: white;
+        }
+
+        .navbar-brand:focus, .navbar-brand:active, .navbar-brand:visited{
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar-brand:hover{
+            text-decoration: none;
+            color: white;
+        }
+
+        nav{
+
+        }
+
+        .menu{
+            display: block;
+            float: right;
+            margin: 0;
+            padding: 0;
+            max-height: 400px;
+            line-height: 70px;
+            font-family: 'Kurale', serif;
+            font-size: 1.3em;
+            letter-spacing: 1px;
+        }
+ 
+        .menu li{
+            display: inline-block;
+            position: relative;
+            z-index: 100;
+        }
+ 
+        .menu li a {
+            font-weight:600;
+            text-decoration:none;
+            padding: 4px;
+            padding-left: 20px;
+            display:block;
+            color:#ffffff;
+         
+            -webkit-transition: all 0.2s ease-in-out 0s;
+            -moz-transition: all 0.2s ease-in-out 0s;
+            -o-transition: all 0.2s ease-in-out 0s;
+            -ms-transition: all 0.2s ease-in-out 0s;
+            transition: all 0.2s ease-in-out 0s;
+        }
+ 
+        .menu li a:hover, .menu li:hover > a{
+            color: #cc9900;
+        }
+
+/* hide the second level menu */
+        .menu ul {
+            display: none;
+            margin: 0;
+            padding: 0;
+            width: 200px;
+            position: absolute;
+            top: 50px;
+            left: 0px;
+            background: #ffffff;
+            border: 1px solid #1C7B63;
+        }
+ 
+/* display second level menu on hover */
+        .menu li:hover > ul{
+            display: block;
+        }
+ 
+        .menu ul li {
+            display:block;
+            float: none;
+            background:none;
+            margin:0;
+            padding:0;
+        }
+ 
+        .menu ul li a {
+            font-size:1em;
+            font-weight:normal;
+            display:block;
+            color:#797979;
+            border-left:3px solid #ffffff;
+            background:#ffffff;
+        }
+ 
+        .menu ul li a:hover, .menu ul li:hover > a{
+            background: #D1E4D2;
+            border-left: 3px solid #53BB72;
+            color:#797979;
+        }
+
+        /* change level 3 menu positions */
+        .menu ul ul {left: 149px;
+            top: 0px;
+        }
+
+        .mobile-menu{
+            display:none;
+            margin-right: 20px;
+            line-height: 64px;
+            padding-left: 20px;
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1.2em;
+            float: right;
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            text-decoration:none;
+        }
+
+        a.mobile-menu:hover{
+            color:#ffffff;
+            text-decoration:none;
+        }
+
+        a.mobile-menu:active{
+            color:#ffffff;
+            text-decoration:none;
+        }
+
+    @media (max-width: 1100px) {
+ 
+    .menu{
+        display:none;
+        width: 100%;
+        float: none;
+        margin: 0;
+        padding: 0;
+        margin-right: 0px;
+        z-index: 100000;
+        box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
+        overflow-y: auto;
+    }
+     
+    .mobile-menu{
+        display: block;
+        line-height: 70px;
+        padding-right: 20px;
+    }
+
+    .mobile-menu:hover{
+        color: #cc9900;
+    }
+
+    .social-icons{
+        line-height: 50px;
+    }
+     
+    nav{
+        margin: 0;
+    }
+     
+    .menu li{
+        display: block;
+        line-height: 35px;
+        margin: 0;
+    }
+     
+    .menu li a {
+        background: #ffffff;
+        color:#797979;
+        border-top: 1px solid #e0e0e0;
+        border-left: 3px solid #ffffff;
+    }
+     
+    .menu li a:hover, .menu li:hover > a{
+        background: rgb(251, 246, 231);
+        border-left: 3px solid #cc9900;
+        color: #797979;
+    }
+     
+    /*level 2 and 3 - make same width as all items*/
+    .menu ul {
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .menu ul li a{
+        padding-left: 30px;
+    }
+     
+    .menu ul ul {
+        left: 0;
+    }
+     
+    }
+    /*end media queries*/
+/********************************************************************************************/
 
     .callout-text{
         position: relative;
@@ -584,13 +807,13 @@ h3:after{
         background: url("../images/decor/luk.jpg") no-repeat 50% 50%;
     }
 
-.menu{
+.dishes-menu{
     position: relative;
     background: url('../images/bgs/bg_pattern_rhombus.jpg') repeat center top;
     padding: 100px 0;
 }
 
-    .menu h2{
+    .dishes-menu h2{
         color: #cc9900; 
         text-align: center;
     }
@@ -891,7 +1114,7 @@ h3:after{
 
 /*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
 
-@media only screen and (max-width: 1160px) {
+@media only screen and (max-width: 1100px) {
 
     .header-menu{
         float: none;
@@ -909,7 +1132,7 @@ h3:after{
 
     .header-social{
         margin: 0 auto;
-        float: none;
+        float: left;
     }
 
     .header-social ul{
@@ -1063,7 +1286,7 @@ h2{
         padding: 10px 5% 10px 5%;
     }
 
-    .menu h2{
+    .dishes-menu h2{
         color: #cc9900; 
         text-align: center;
         margin-bottom: 80px;
@@ -1177,19 +1400,3 @@ h2{
 }
 
 }
-
-@media only screen and (max-width: 330px) {
-    .header-social{
-        clear: both;
-    }
-
-    .logo{
-        width: 100%;
-    }
-}
-
-@media only screen and (min-width: 1400px){
-    .cover, .ingredients, .reviews{
-        background-size: 100%;
-    }
-} 
