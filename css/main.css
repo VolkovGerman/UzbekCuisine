@@ -496,7 +496,6 @@ h3:after{
             -webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.5);
                -moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.5);
                     box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.5);
-            min-width: 462px;
         }   
 
         .navbar-header{
@@ -1241,7 +1240,6 @@ h3:after{
     .header-menu{
         float: none;
         clear: right;
-
     }
 
     .header-menu ul{
@@ -1347,6 +1345,24 @@ h2{
         line-height: 20px;
         list-style: none;
         font-size: 1.3125em;
+    }
+
+    .navbar-brand{
+        margin-left: 20px;
+    }
+
+    .social-icons{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .social-icons li{
+        padding: 10px 0px;
+    }
+
+    .mobile-menu{
+        padding-right: 0px; 
+        padding-left: 0px;
     }
 
 .callout-text{
