@@ -415,7 +415,7 @@ h3:after{
         .navbar{
             position: fixed !important;
             left: 0;
-            right: 0;
+            width: 100%;
             min-height: 70px;
             background-color: #232222;
             border-bottom: 1px solid #484848;
