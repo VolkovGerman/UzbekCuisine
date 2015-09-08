@@ -1362,7 +1362,8 @@ h2{
     .mobile-menu{
         padding-right: 0px; 
         padding-left: 0px;
-        margin-right: 2px;
+        margin-right: 10px;
+        font-size: 1em;
     }
 
 .callout-text{
