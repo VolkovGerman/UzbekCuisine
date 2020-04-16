@@ -1,2 +1,2 @@
 # UzbekCuisine
-http://volkovgerman.github.io/UzbekCuisine
+http://volkov97.github.io/UzbekCuisine
